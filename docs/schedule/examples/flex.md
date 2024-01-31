@@ -10,7 +10,7 @@ Flex is a GTFS Schedule extension project that aims to facilitate discoverabilit
 
 The following example demonstrates how to model different demand responsive service use cases using Flex.
 
-## On-demand services within a zone
+## On-demand services within a single zone
 
 ## On-demand services between multiple zones
 
@@ -57,7 +57,7 @@ flächenrufbus_angermünde_weekdays | 1 | 60 | Anmeldung mind. 60min vorher erfo
 flächenrufbus_angermünde_weekends | 1 | 60 | 1€ Komfortzuschlag pro Person; Anmeldung mind. 60min vorher erforderlich, per Anruf zwischen 08:00 und 24:00 möglich, oder online rund um die Uhr | +49 3332 442 755 | https://uvg-online.com/rufbus-angermuende/ | https://uvg.tdimo.net/bapp/#/astBuchungenView
 
 ### Define stop_times
-- The 476 route operates from 5:30 PM to 10:00 PM on weekdays and from 8:00 AM to 10:00 PM on weekends. The operating hours are defined using the `start_pickup_drop_off_window` and `end_pickup_drop_off_window` fields.
+- The 476 route operates from 5:30 PM to 10:00 PM on weekdays and from 8:30 AM to 10:00 PM on weekends. The operating hours are defined using the `start_pickup_drop_off_window` and `end_pickup_drop_off_window` fields.
 - Travel within the same location group requires two records in stop_times.txt with the same `location_group_id`.
   - The first record with `pickup_type = 2` and `drop_off_type = 1` indicates that booking boarding is allowed at the location group.
   - The second record with `pickup_type = 1` and `drop_off_type = 2` indicates that booking alighting is allowed at the location group.
@@ -65,10 +65,10 @@ flächenrufbus_angermünde_weekends | 1 | 60 | 1€ Komfortzuschlag pro Person; 
 [**stop_times.txt**](../../reference/#stop_timestxt)
 trip_id | stop_sequence | location_group_id | start_pickup_drop_off_window | end_pickup_drop_off_window | pickup_type | drop_off_type | pickup_booking_rule_id | drop_off_booking_rule_id
 -- | -- | -- | -- | -- | -- | -- | -- | --
-476_weekdays | 1 | 476_stops | 17:30:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde-weekdays | flächenrufbus-angermünde-weekdays
-476_weekdays | 2 | 476_stops | 17:30:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde-weekdays | flächenrufbus-angermünde-weekdays
-476_weekends | 1 | 476_stops | 08:30:00 | 22:00:00 | 2 | 1 | flächenrufbus-angermünde-weekdays | flächenrufbus-angermünde-weekends
-476_weekends | 2 | 476_stops | 08:30:00 | 22:00:00 | 1 | 2 | flächenrufbus-angermünde-weekdays | flächenrufbus-angermünde-weekends
+476_weekdays | 1 | 476_stops | 17:30:00 | 22:00:00 | 2 | 1 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
+476_weekdays | 2 | 476_stops | 17:30:00 | 22:00:00 | 1 | 2 | flächenrufbus_angermünde_weekdays | flächenrufbus_angermünde_weekdays
+476_weekends | 1 | 476_stops | 08:30:00 | 22:00:00 | 2 | 1 | flächenrufbus_angermünde_weekends | flächenrufbus_angermünde_weekends
+476_weekends | 2 | 476_stops | 08:30:00 | 22:00:00 | 1 | 2 | flächenrufbus_angermünde_weekends | flächenrufbus_angermünde_weekends
 
 ## Deviated route
 
